@@ -8710,7 +8710,7 @@ border-radius: 2%;
   /* Equivalent to
   transition: all 0.7s allow-discrete; */
 }
-@media screen and (max-width: 575px) {
+/* @media screen and (max-width: 575px) {
   
   .dialog-container{
     display: flex;
@@ -8737,7 +8737,7 @@ border-radius: 2%;
     display: flex;
     flex-direction: column;
   }
-}
+} */
 
 .blueprint{
  width: 100%; 
