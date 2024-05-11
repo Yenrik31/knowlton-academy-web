@@ -412,6 +412,12 @@ p {
     padding-left: 0px;
     padding-right: 0px;
   }
+  .dialog-container{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 20px;
+  }
 }
 
 .e-btn {
@@ -6997,6 +7003,9 @@ p.checkout-coupon input[type=text]:focus {
 .slider__nav-item.purple-bg::after {
   background: rgba(138, 12, 174, 0.8);
 }
+.slider__nav-item.grey-bg::after {
+  background: rgba(128, 128, 128, 0.8);
+}
 .slider__nav-content {
   position: relative;
   z-index: 1;
@@ -8643,3 +8652,142 @@ p.checkout-coupon input[type=text]:focus {
   }
   }
 /*# sourceMappingURL=style.css.map */
+/*dialogue*/
+/*   Open state of the dialog  */
+dialog[open] {
+  opacity: 1;
+  transform: scaleY(1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  margin-left: 25%;
+  margin-top: 1.5%;
+}
+.dialog-container{
+  display: flex;
+  gap: 20px;
+}
+.first-dialog{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+.first-dialog > div{
+  display: flex;
+  flex-direction: column;
+}
+
+.first-dialog > div > input{
+  padding: 10px;
+  width: 250px;
+  border-radius: 10px;
+}
+.second-dialog{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 50%;
+}
+
+.second-dialog > div{
+  display: flex;
+  flex-direction: column;
+}
+.second-dialog > div > input{
+  padding: 10px;
+  width: 250px;
+  border-radius: 10px;
+}
+/*   Closed state of the dialog   */
+dialog {
+  opacity: 0;
+border: none;
+border-radius: 2%;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+@media (max-width: 575px) {
+  
+  .dialog-container{
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 20px;
+  }
+  .second-dialog > div > input{
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .first-dialog > div > input{
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .sixty-blueprint > img{
+    width: 300px;
+  }
+  .blueprint > div .forty-blueprint{
+    width: 100%;
+  }
+  .blueprint > div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.blueprint{
+ width: 100%; 
+ display: flex; 
+ flex-direction: column; 
+ gap: 50px;
+ margin-bottom: 70px;
+}
+.blueprint >h2{
+  width: 100%;
+  text-align: center;
+}
+.heading-blueprint{
+  width: 100%; 
+  text-align: center;
+}
+.blueprint > div{
+  width: 100%;
+  display: flex;
+}
+.sixty-blueprint{
+  width: 60%;
+  padding-left: 20px;
+}
+.forty-blueprint{
+  width: 40%; 
+  padding-left: 20px; 
+  padding-top: 60px;
+}
+/*   Before-open state  */
+/* Needs to be after the previous dialog[open] rule to take effect,
+    as the specificity is the same */
+
+
+/* Transition the :backdrop when the dialog modal is promoted to the top layer */
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0%);
+  transition:
+    display 0.7s allow-discrete,
+    overlay 0.7s allow-discrete,
+    background-color 0.7s;
+  /* Equivalent to
+  transition: all 0.7s allow-discrete; */
+}
+
+dialog[open]::backdrop {
+  background-color: rgb(0 0 0 / 25%);
+}
+
+/* This starting-style rule cannot be nested inside the above selector
+because the nesting selector cannot represent pseudo-elements. */
+
+

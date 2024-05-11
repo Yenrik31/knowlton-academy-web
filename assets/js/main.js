@@ -24,6 +24,7 @@
 21. Counter Js
 22. Parallax Js
 23. InHover Active Js
+24.dialog
 
 ****************************************************/
 
@@ -121,7 +122,7 @@
     // 09. Slider Js (Home 3)
 	var galleryThumbs = new Swiper('.slider__nav', {
 		spaceBetween: 0,
-		slidesPerView: 5,
+		slidesPerView: 6,
 		freeMode: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
@@ -336,3 +337,41 @@
 	});
 
 })(jQuery);
+
+//////////////////////////////////////////////////////////
+// 24.dialog
+
+const dialogElem = document.getElementById("dialog");
+const showBtn = document.querySelector(".show");
+const closeBtn = document.querySelector(".close");
+const ismobile = window.innerWidth <= 768
+
+
+if (ismobile) {
+	console.log(ismobile,'===ismob');
+	showBtn.addEventListener("click", () => {
+		window.location.href = 'contact.html';
+	  });
+	
+}else{
+
+	showBtn.addEventListener("click", () => {
+	  dialogElem.showModal();
+	});
+}
+
+
+
+  if (closeBtn) {
+	
+	  closeBtn.addEventListener("click", () => {
+		dialogElem.close();
+	  });
+  }
+
+  if (closeBtn) {
+	
+	  closeBtn.addEventListener("touchstart", () => {
+		  dialogElem.close();
+		});
+  }
