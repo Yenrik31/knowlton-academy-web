@@ -8717,7 +8717,7 @@ border-radius: 2%;
  flex-direction: column; 
  gap: 50px;
  margin-bottom: 70px;
- padding-left: 70px;
+ padding: 150px;
 }
 .blueprint >h2{
   width: 100%;
@@ -8732,12 +8732,12 @@ border-radius: 2%;
   display: flex;
 }
 .sixty-blueprint{
-  width: 60%;
+  width: 50%;
   padding-left: 20px;
 }
 .forty-blueprint{
-  width: 40%; 
-  padding-left: 20px; 
+  width: 50%; 
+  padding-left: 70px; 
   padding-top: 60px;
 }
 /*   Before-open state  */
@@ -8753,13 +8753,14 @@ border-radius: 2%;
         flex-direction: column; 
         gap: 50px;
         margin-bottom: 70px;
-        padding-left: 0px;
+        padding: 0px;
        }
       .sixty-blueprint > img{
         width: 300px;
       }
       .blueprint > div .forty-blueprint{
         width: 100%;
+        padding-left: 20px;
       }
       .blueprint > div{
         width: 100%;
