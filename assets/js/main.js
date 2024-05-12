@@ -25,7 +25,7 @@
 22. Parallax Js
 23. InHover Active Js
 24.dialog
-
+25.accordian
 ****************************************************/
 
 (function ($) {
@@ -375,3 +375,11 @@
 // 		  dialogElem.close();
 // 		});
 //   }
+
+// accordian
+const accordian = document.getElementsByClassName('contentbox')
+for(i=0; i<accordian.length; i++){
+   accordian[i].addEventListener('click', function(){
+	this.classList.toggle('active')
+   })
+}

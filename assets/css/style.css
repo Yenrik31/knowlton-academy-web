@@ -8749,6 +8749,16 @@ border-radius: 2%;
   padding-right: 150px;
   padding-bottom: 150px;
 }
+.threesteps-details{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  border-bottom: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 80px;
+  padding-top: 100px;
+}
 .steps{
   display: flex;
   gap: 50px;
@@ -8760,6 +8770,20 @@ border-radius: 2%;
   flex-direction: column;
   align-items: end;
   gap: 40px;
+}
+.stepone-details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 70px;
+}
+.stepone-details >div{
+  width:80% ;
+  height: fit-content;
+  padding: 20px;
+  border-radius: 10px;
 }
 .stepone >div{
    width:80% ;
@@ -8785,6 +8809,51 @@ border-radius: 2%;
   width:90% ;
 }
 
+.accordiansec{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 80px;
+}
+
+.accordian{
+ width: 100%;
+}
+.accordian .contentbox{
+  position: relative;
+  margin: 10px 20px;
+}
+.accordian .contentbox .label{
+position: relative;
+padding: 10px;
+color: black;
+cursor: pointer;
+}
+.accordian .contentbox .label::before{
+  content: '+';
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+.accordian .contentbox .content{
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  overflow-y: auto;
+  
+}
+.accordian .contentbox.active .content{
+   height: 150px;
+   padding: 10px;
+   border-top: 1px solid gray;
+}
+
+.accordian .contentbox.active .label::before{
+  content: '-';
+}
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
@@ -8821,6 +8890,21 @@ border-radius: 2%;
         padding-right: 20px;
         padding-bottom: 100px;
       }
+      .threesteps-details{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 70px;
+        padding-top: 100px;
+      }
+      .threesteps-details > h1{
+        font-size: large;
+      }
+      .threesteps > h1{
+        font-size: large;
+      }
       .stepone{
         width: 100%;
         display: flex;
@@ -8853,6 +8937,12 @@ border-radius: 2%;
         padding: 20px;
         border-radius: 10px;
      }
+     .accordiansec h1{
+      font-size: large;
+    }
+    .accordiansec{
+      padding: 10px;
+    }
     } 
     
 
