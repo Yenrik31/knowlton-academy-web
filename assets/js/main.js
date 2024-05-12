@@ -341,37 +341,37 @@
 //////////////////////////////////////////////////////////
 // 24.dialog
 
-const dialogElem = document.getElementById("dialog");
-const showBtn = document.querySelector(".show");
-const closeBtn = document.querySelector(".close");
-const ismobile = window.innerWidth <= 768
+// const dialogElem = document.getElementById("dialog");
+// const showBtn = document.querySelector(".show");
+// const closeBtn = document.querySelector(".close");
+// const ismobile = window.innerWidth <= 768
 
 
-if (ismobile) {
-	console.log(ismobile,'===ismob');
-	showBtn.addEventListener("click", () => {
-		window.location.href = 'contact.html';
-	  });
+// if (ismobile) {
+// 	console.log(ismobile,'===ismob');
+// 	showBtn.addEventListener("click", () => {
+// 		window.location.href = 'contact.html';
+// 	  });
 	
-}else{
+// }else{
 
-	showBtn.addEventListener("click", () => {
-	  dialogElem.showModal();
-	});
-}
+// 	showBtn.addEventListener("click", () => {
+// 	  dialogElem.showModal();
+// 	});
+// }
 
 
 
-  if (closeBtn) {
+//   if (closeBtn) {
 	
-	  closeBtn.addEventListener("click", () => {
-		dialogElem.close();
-	  });
-  }
+// 	  closeBtn.addEventListener("click", () => {
+// 		dialogElem.close();
+// 	  });
+//   }
 
-  if (closeBtn) {
+//   if (closeBtn) {
 	
-	  closeBtn.addEventListener("touchstart", () => {
-		  dialogElem.close();
-		});
-  }
+// 	  closeBtn.addEventListener("touchstart", () => {
+// 		  dialogElem.close();
+// 		});
+//   }
