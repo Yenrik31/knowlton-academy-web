@@ -8710,34 +8710,6 @@ border-radius: 2%;
   /* Equivalent to
   transition: all 0.7s allow-discrete; */
 }
-/* @media screen and (max-width: 575px) {
-  
-  .dialog-container{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    gap: 20px;
-  }
-  .second-dialog > div > input{
-    padding: 5px;
-    border-radius: 10px;
-  }
-  .first-dialog > div > input{
-    padding: 5px;
-    border-radius: 10px;
-  }
-  .sixty-blueprint > img{
-    width: 300px;
-  }
-  .blueprint > div .forty-blueprint{
-    width: 100%;
-  }
-  .blueprint > div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-} */
 
 .blueprint{
  width: 100%; 
@@ -8745,6 +8717,7 @@ border-radius: 2%;
  flex-direction: column; 
  gap: 50px;
  margin-bottom: 70px;
+ padding-left: 70px;
 }
 .blueprint >h2{
   width: 100%;
@@ -8771,6 +8744,31 @@ border-radius: 2%;
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
 
+    @media screen and (max-width: 575px) {
+
+
+      .blueprint{
+        width: 100%; 
+        display: flex; 
+        flex-direction: column; 
+        gap: 50px;
+        margin-bottom: 70px;
+        padding-left: 0px;
+       }
+      .sixty-blueprint > img{
+        width: 300px;
+      }
+      .blueprint > div .forty-blueprint{
+        width: 100%;
+      }
+      .blueprint > div{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+    } 
+    
+
 
 /* Transition the :backdrop when the dialog modal is promoted to the top layer */
 dialog::backdrop {
@@ -8786,6 +8784,8 @@ dialog::backdrop {
 dialog[open]::backdrop {
   background-color: rgb(0 0 0 / 25%);
 }
+
+
 
 /* This starting-style rule cannot be nested inside the above selector
 because the nesting selector cannot represent pseudo-elements. */
