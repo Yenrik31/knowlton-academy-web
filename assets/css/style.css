@@ -8717,7 +8717,9 @@ border-radius: 2%;
  flex-direction: column; 
  gap: 50px;
  margin-bottom: 70px;
- padding: 150px;
+ padding-left: 150px;
+ padding-right: 150px;
+ padding-bottom: 100px;
 }
 .blueprint >h2{
   width: 100%;
@@ -8734,11 +8736,20 @@ border-radius: 2%;
 .sixty-blueprint{
   width: 50%;
   padding-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sixty-blueprint > img{
+  width: 400px;
 }
 .forty-blueprint{
   width: 50%; 
   padding-left: 70px; 
   padding-top: 60px;
+}
+.forty-blueprint > p{
+    width: 70%; 
 }
 .threesteps{
   display: flex;
@@ -8748,6 +8759,9 @@ border-radius: 2%;
   padding-left: 150px;
   padding-right: 150px;
   padding-bottom: 150px;
+}
+.threesteps > h1{
+  text-align: center;
 }
 .threesteps-details{
   display: flex;
@@ -8846,13 +8860,19 @@ cursor: pointer;
   
 }
 .accordian .contentbox.active .content{
-   height: 150px;
-   padding: 10px;
-   border-top: 1px solid gray;
+  height: fit-content;
+  padding: 10px;
+  border-top: 1px solid gray;
 }
 
 .accordian .contentbox.active .label::before{
   content: '-';
+}
+.label > h3  {
+ font-weight: 500;
+}
+.label > h5{
+  font-weight: 500;
 }
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
@@ -8869,18 +8889,36 @@ cursor: pointer;
         margin-bottom: 70px;
         padding: 0px;
        }
+       .sixty-blueprint{
+        width: 0%;
+        visibility: hidden;
+        height: 0;
+       }
       .sixty-blueprint > img{
-        width: 300px;
+        visibility: hidden;
       }
       .blueprint > div .forty-blueprint{
         width: 100%;
         padding-left: 20px;
+        padding-right: 10px;
+        padding-top:0 ;
       }
       .blueprint > div{
         width: 100%;
         display: flex;
         flex-direction: column;
+        gap: 10px;
       }
+      .blueprint > h2{
+        font-size: x-large;
+        text-align: center;
+      }
+      .forty-blueprint > p{
+        width: 98%; 
+    }
+    .forty-blueprint > h2{
+      font-size: x-large;
+  }
       .threesteps{
         display: flex;
         flex-direction: column;
@@ -8888,7 +8926,13 @@ cursor: pointer;
         border-bottom: 70px;
         padding-left: 20px;
         padding-right: 20px;
-        padding-bottom: 100px;
+        padding-bottom: 0px;
+      }
+      .steps{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
       }
       .threesteps-details{
         display: flex;
@@ -8903,7 +8947,8 @@ cursor: pointer;
         font-size: large;
       }
       .threesteps > h1{
-        font-size: large;
+        font-size: x-large;
+        text-align: left;
       }
       .stepone{
         width: 100%;
@@ -8919,13 +8964,6 @@ cursor: pointer;
         visibility: hidden;
         width:0% ;
         height: 0%;
-        padding: 0px;
-        border-radius: 0px;
-        border: 0px solid gray;
-        box-shadow: 0px 0px 0px gray;
-        display: flex;
-        justify-content: center;
-        align-items: center;
       }
       .steptwo > div > img{
         visibility: hidden;
