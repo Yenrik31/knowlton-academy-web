@@ -23,6 +23,32 @@
    <link rel="stylesheet" href="assets/css/default.css">
    <link rel="stylesheet" href="assets/css/style.css">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+		emailjs.init({
+		  publicKey: "aVJrebu26LOFLE8Pj",
+		});
+	 })();
+</script>
+<script type="text/javascript">
+   window.onload = function() {
+       document.getElementById('contact-form-build').addEventListener('submit', function(event) {
+           event.preventDefault();
+           // generate a five digit number for the contact_number variable
+           // these IDs from the previous steps
+           emailjs.sendForm('service_i1fsptw', 'template_jjkclsr', this)
+               .then(function() {
+                   console.log('SUCCESS!');
+                   alert("Email successfully sent")
+               }, function(error) {
+                   console.log('FAILED...', error);
+               });
+       });
+   }
+</script>
 </head>
 
 <body>
@@ -753,10 +779,10 @@
                   <div class="col-xxl-12">
                      <div class="cta__form grey-bg-2">
                         <div class="cta__form-inner">
-                           <form action="#">
-                              <input type="text" placeholder="Your Name">
-                              <input type="email" placeholder="Your Email">
-                              <button type="submit" class="e-btn e-btn-6">Take A Free Course</button>
+                           <form id="contact-form-build">
+                              <input type="text" placeholder="Your Name" id="name" name="name">
+                              <input type="email" placeholder="Your Email" id="email" name="email">
+                              <button type="submit" class="e-btn e-btn-6" value="Send">Apply Details</button>
                            </form>
                         </div>
                         <div class="cta__agree d-flex align-items-center">

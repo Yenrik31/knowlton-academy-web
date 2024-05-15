@@ -22,6 +22,32 @@
    <link rel="stylesheet" href="assets/css/elegantFont.css">
    <link rel="stylesheet" href="assets/css/default.css">
    <link rel="stylesheet" href="assets/css/style.css">
+   <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+		emailjs.init({
+		  publicKey: "aVJrebu26LOFLE8Pj",
+		});
+	 })();
+</script>
+<script type="text/javascript">
+   window.onload = function() {
+       document.getElementById('contact-form').addEventListener('submit', function(event) {
+           event.preventDefault();
+           // generate a five digit number for the contact_number variable
+           // these IDs from the previous steps
+           emailjs.sendForm('service_i1fsptw', 'template_8ygr2ca', this)
+               .then(function() {
+                   console.log('SUCCESS!');
+                   alert("Email successfully sent")
+               }, function(error) {
+                   console.log('FAILED...', error);
+               });
+       });
+   }
+</script>
 </head>
 
 <body>
@@ -172,26 +198,26 @@
                         <p>Have a question or just want to say hi? We'd love to hear from you.</p>
                      </div>
                      <div class="contact__form">
-                        <form action="assets/mail.php">
+                        <form id="contact-form">
                            <div class="row">
                               <div class="col-xxl-6 col-xl-6 col-md-6">
                                  <div class="contact__form-input">
-                                    <input type="text" placeholder="Your Name" name="name">
+                                    <input type="text" placeholder="Your Name" name="name" id="name">
                                  </div>
                               </div>
                               <div class="col-xxl-6 col-xl-6 col-md-6">
                                  <div class="contact__form-input">
-                                    <input type="email" placeholder="Your Email" name="email">
+                                    <input type="email" placeholder="Your Email" name="email" id="email">
                                  </div>
                               </div>
                               <div class="col-xxl-12">
                                  <div class="contact__form-input">
-                                    <input type="text" placeholder="Subject" name="subject">
+                                    <input type="text" placeholder="Subject" name="subject" id="subject">
                                  </div>
                               </div>
                               <div class="col-xxl-12">
                                  <div class="contact__form-input">
-                                    <textarea placeholder="Enter Your Message" name="message"></textarea>
+                                    <textarea placeholder="Enter Your Message" name="message" id="message"></textarea>
                                  </div>
                               </div>
                               <div class="col-xxl-12">
@@ -203,7 +229,7 @@
                               </div>
                               <div class="col-xxl-12">
                                  <div class="contact__btn">
-                                    <button type="submit" class="e-btn">Send your message</button>
+                                    <button type="submit" class="e-btn" value="Send">Send your message</button>
                                  </div>
                               </div>
                            </div>

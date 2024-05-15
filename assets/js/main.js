@@ -383,3 +383,29 @@ for(i=0; i<accordian.length; i++){
 	this.classList.toggle('active')
    })
 }
+
+//sendmail
+
+
+// function sendmail(){
+// 	(function(){
+// 		emailjs.init({
+// 		  publicKey: "aVJrebu26LOFLE8Pj",
+// 		});
+// 	 })();
+// 	let params = {
+// 		name : document.getElementById("name").value,
+// 		email : document.getElementById("email").value,
+// 		subject : document.getElementById("subject").value,
+// 		message : document.getElementById("message").value
+
+// 	}
+//    emailjs.send("service_i1fsptw","template_8ygr2ca",params).then(
+// 	(response) => {
+// 	  console.log('SUCCESS!', response.status, response.text);
+// 	},
+// 	(error) => {
+// 	  console.log('FAILED...', error);
+// 	},
+//   );
+// }
