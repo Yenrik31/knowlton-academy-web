@@ -8874,6 +8874,34 @@ cursor: pointer;
 .label > h5{
   font-weight: 500;
 }
+.detail_table{
+border: 1px solid black;
+margin-top: 70px;
+}
+.cource-details{
+border: 1px solid black;
+display: flex;
+align-items: center;
+gap: 25px;
+padding: 15px;
+}
+.numbercource{
+  width: 10%;
+display: flex;
+justify-content: center;
+align-items:start;
+}
+.detailcource{
+  width: 70%;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+.moreText {
+  display: none;
+}
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
@@ -8881,6 +8909,28 @@ cursor: pointer;
     @media screen and (max-width: 575px) {
 
 
+      .cource-details{
+        border: 1px solid black;
+        padding: 10px;
+        display: flex;
+        gap: 0;
+        }
+        .numbercource{
+          width: 0%;
+          visibility: hidden;
+        }
+        .numbercource > h1{
+          width: 0%;
+          visibility: hidden;
+        }
+        .detailcource{
+          width: 100%;
+          padding-top: 5px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 2px;
+        }
       .blueprint{
         width: 100%; 
         display: flex; 
