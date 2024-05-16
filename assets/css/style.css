@@ -8868,11 +8868,34 @@ cursor: pointer;
 .accordian .contentbox.active .label::before{
   content: '-';
 }
-.label > h3  {
- font-weight: 500;
+
+.label > p{
+  font-family: Inter, sans-serif;
+  margin-bottom: inherit;
+  font-weight: 400;
+  box-sizing: border-box;
+  border: 0 solid #e5e7eb;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-align: start;
+  margin-bottom: inherit;
 }
-.label > h5{
-  font-weight: 500;
+.label > p > span{
+  font-weight: 700;
+  color: #03a9f4;
+}
+.content > p {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+    scroll-behavior: smooth !important;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
 }
 .detail_table{
   border: 1px solid black;
@@ -8908,6 +8931,8 @@ align-items:start;
 .course__img > img{
   width: 70%;
 }
+
+
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
@@ -9038,6 +9063,10 @@ align-items:start;
     }
     .accordiansec{
       padding: 10px;
+      padding-bottom: 30px;
+    }
+    .label > p{
+      width: 90%;
     }
     } 
     
