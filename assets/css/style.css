@@ -8902,13 +8902,21 @@ align-items:start;
 .moreText {
   display: none;
 }
+.course-related{
+  width: 70%;
+}
+.course__img > img{
+  width: 70%;
+}
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
 
     @media screen and (max-width: 575px) {
 
-
+      .course-related{
+        width: 100%;
+      }
       .cource-details{
         border: 1px solid black;
         padding: 10px;
