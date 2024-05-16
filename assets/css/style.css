@@ -8875,8 +8875,8 @@ cursor: pointer;
   font-weight: 500;
 }
 .detail_table{
-border: 1px solid black;
-margin-top: 70px;
+  border: 1px solid black;
+  margin-top: 70px;
 }
 .cource-details{
 border: 1px solid black;
