@@ -8820,81 +8820,6 @@ border-radius: 2%;
 .steptwo > div > img{
   width:90% ;
 }
-
-.accordiansec{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-bottom: 80px;
-}
-
-.accordian{
- width: 100%;
-}
-.accordian .contentbox{
-  position: relative;
-  margin: 10px 20px;
-}
-.accordian .contentbox .label{
-position: relative;
-padding: 10px;
-color: black;
-cursor: pointer;
-}
-.accordian .contentbox .label::before{
-  content: '+';
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
-  font-size: 1.5em;
-}
-.accordian .contentbox .content{
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  transition: 0.5s;
-  overflow-y: auto;
-  
-}
-.accordian .contentbox.active .content{
-  height: fit-content;
-  padding: 10px;
-  border-top: 1px solid gray;
-}
-
-.accordian .contentbox.active .label::before{
-  content: '-';
-}
-
-.label > p{
-  font-family: Inter, sans-serif;
-  margin-bottom: inherit;
-  font-weight: 400;
-  box-sizing: border-box;
-  border: 0 solid #e5e7eb;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  text-align: start;
-  margin-bottom: inherit;
-}
-.label > p > span{
-  font-weight: 700;
-  color: #03a9f4;
-}
-.content > p {
-    box-sizing: border-box;
-    border: 0 solid #e5e7eb;
-    scroll-behavior: smooth !important;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    unicode-bidi: isolate;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-}
 .detail_table{
   border: 1px solid black;
   margin-top: 70px;
@@ -8960,7 +8885,7 @@ align-items:start;
 }
 
 .question h3{
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 .answer{
   max-height: 0;
@@ -8970,7 +8895,7 @@ align-items:start;
 .answer p{
   padding-top: 1rem;
   line-height: 1.6;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 .faq.active .answer{
   max-height: 300px;
@@ -8993,14 +8918,79 @@ svg{
     transform: translateY(0px);
   }
 }
+.accordiansec{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 70px;
+}
+.accordian-title{
+  width: 100%;
+  font-size: 3rem;
+  text-align: center;
+  margin: 2rem 0rem;
+}
+.contentbox{
+  width: 100%;
+  margin-top: 10px;
+  padding-bottom: 0px;
+  border-bottom: 1px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.label{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.label > p {
+  font-size: 1.2rem;
+  line-height: 2rem;
+}
+.label > p > span{
+  font-size: 1.3rem;
+  color: #03a9f4;
+}
+.content{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease; 
+}
+.content p{
+  padding-top: 1rem;
+  line-height: 1.6;
+  font-size: 1.2rem;
+}
+.contentbox.active .content{
+  max-height: 300px;
+  animation: fade 1s ease-in-out;
+}
+.contentbox.active svg{
+  transform: rotate(45deg);
+}
 /*   Before-open state  */
 /* Needs to be after the previous dialog[open] rule to take effect,
     as the specificity is the same */
 
     @media screen and (max-width: 575px) {
+      .stepone-details >div{
+        width:100% ;
+        height: fit-content;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .accordian-title{
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 2rem 0rem;
+      }
       .faq-title{
         width: 100%;
-        font-size: 2rem;
+        font-size: 1.5rem;
         text-align: center;
         margin: 2rem 0rem;
       }
@@ -9140,18 +9130,8 @@ svg{
         padding: 20px;
         border-radius: 10px;
      }
-     .accordiansec h1{
-      font-size: large;
+     
     }
-    .accordiansec{
-      padding: 10px;
-      padding-bottom: 30px;
-    }
-    .label > p{
-      width: 90%;
-    }
-    } 
-    
 
 
 /* Transition the :backdrop when the dialog modal is promoted to the top layer */
