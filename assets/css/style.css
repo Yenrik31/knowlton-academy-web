@@ -8976,6 +8976,9 @@ svg{
     as the specificity is the same */
 
     @media screen and (max-width: 575px) {
+      .yellow-bg > img {
+        display: none;
+      }
       .stepone-details >div{
         width:100% ;
         height: fit-content;
