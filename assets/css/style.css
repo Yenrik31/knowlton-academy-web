@@ -1572,6 +1572,9 @@ p {
 .sidebar-toggle-btn-white .line {
   background: #ffffff;
 }
+.sidebar-toggle-btn-black .line {
+  background: black;
+}
 .sidebar-toggle-btn:hover {
   cursor: pointer;
 }
@@ -6891,9 +6894,9 @@ p.checkout-coupon input[type=text]:focus {
   opacity: 0;
 }
 .slider__title {
-  font-size: 70px;
+  font-size: 40px;
   color: #ffffff;
-  line-height: 1.05;
+  line-height: 1.2;
   margin-bottom: 5px;
   position: relative;
   z-index: 1;
