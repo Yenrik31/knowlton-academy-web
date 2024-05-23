@@ -341,41 +341,13 @@
 //////////////////////////////////////////////////////////
 // 24.dialog
 
-// const dialogElem = document.getElementById("dialog");
-// const showBtn = document.querySelector(".show");
-// const closeBtn = document.querySelector(".close");
-// const ismobile = window.innerWidth <= 768
+  const dialog = document.getElementById('apply-dialog')
+  const wrapper = document.querySelector(".wrapper")
+ 
 
+  const showApplyDialog = (show)=> show ?  dialog.showModal() : dialog.close()
 
-// if (ismobile) {
-// 	console.log(ismobile,'===ismob');
-// 	showBtn.addEventListener("click", () => {
-// 		window.location.href = 'contact.html';
-// 	  });
-	
-// }else{
-
-// 	showBtn.addEventListener("click", () => {
-// 	  dialogElem.showModal();
-// 	});
-// }
-
-
-
-//   if (closeBtn) {
-	
-// 	  closeBtn.addEventListener("click", () => {
-// 		dialogElem.close();
-// 	  });
-//   }
-
-//   if (closeBtn) {
-	
-// 	  closeBtn.addEventListener("touchstart", () => {
-// 		  dialogElem.close();
-// 		});
-//   }
-
+  dialog.addEventListener('click', (e)=> !wrapper.contains(e.target) && dialog.close())
 // accordian
 const accordian = document.getElementsByClassName('contentbox')
 for(i=0; i<accordian.length; i++){

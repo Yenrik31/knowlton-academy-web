@@ -48,8 +48,6 @@
 /*----------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -412,12 +410,7 @@ p {
     padding-left: 0px;
     padding-right: 0px;
   }
-  .dialog-container{
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    gap: 20px;
-  }
+  
 }
 
 .e-btn {
@@ -8649,6 +8642,7 @@ p.checkout-coupon input[type=text]:focus {
   padding-right: 100px;
   padding-bottom: 100px;
 }
+
 @media only screen and (max-width: 600px) {
   .faq-section{
     padding-left: 5px;
@@ -8663,65 +8657,7 @@ p.checkout-coupon input[type=text]:focus {
     padding-top: 30px;
   }
   }
-/*# sourceMappingURL=style.css.map */
-/*dialogue*/
-/*   Open state of the dialog  */
-dialog[open] {
-  opacity: 1;
-  transform: scaleY(1);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  height: 100vh;
-  margin-left: 25%;
-  margin-top: 1.5%;
-}
-.dialog-container{
-  display: flex;
-  gap: 20px;
-}
-.first-dialog{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 50%;
-}
-.first-dialog > div{
-  display: flex;
-  flex-direction: column;
-}
 
-.first-dialog > div > input{
-  padding: 10px;
-  width: 250px;
-  border-radius: 10px;
-}
-.second-dialog{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 50%;
-}
-
-.second-dialog > div{
-  display: flex;
-  flex-direction: column;
-}
-.second-dialog > div > input{
-  padding: 10px;
-  width: 250px;
-  border-radius: 10px;
-}
-/*   Closed state of the dialog   */
-dialog {
-  opacity: 0;
-border: none;
-border-radius: 2%;
-  /* Equivalent to
-  transition: all 0.7s allow-discrete; */
-}
 
 .blueprint{
  width: 100%; 
@@ -8983,11 +8919,17 @@ svg{
 .contentbox.active svg{
   transform: rotate(45deg);
 }
-/*   Before-open state  */
-/* Needs to be after the previous dialog[open] rule to take effect,
-    as the specificity is the same */
+
+dialog{
+  width: 60%;
+  border-radius: 7px;
+}
 
     @media screen and (max-width: 575px) {
+      dialog{
+        width: 100%;
+        border-radius: 7px;
+      }
       .yellow-bg > img {
         display: none;
       }
@@ -9149,20 +9091,27 @@ svg{
     }
 
 
+dialog{
+  border: none;
+}
+  
 /* Transition the :backdrop when the dialog modal is promoted to the top layer */
-dialog::backdrop {
-  background-color: rgb(0 0 0 / 0%);
-  transition:
-    display 0.7s allow-discrete,
-    overlay 0.7s allow-discrete,
-    background-color 0.7s;
-  /* Equivalent to
-  transition: all 0.7s allow-discrete; */
+::backdrop {
+  background: rgba(0, 0, 0, 0.3); /* semi-transparent black background */
+    backdrop-filter: blur(10px); /* Glassmorphic blur effect */
+ 
 }
 
-dialog[open]::backdrop {
-  background-color: rgb(0 0 0 / 25%);
-}
+/* ::backdrop {
+  background-image: linear-gradient(
+    45deg,
+    magenta,
+    rebeccapurple,
+    dodgerblue,
+    green
+  );
+  opacity: 0.75;
+} */
 
 
 

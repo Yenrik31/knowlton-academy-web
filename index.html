@@ -37,8 +37,16 @@
    window.onload = function() {
        document.getElementById('contact-form-build').addEventListener('submit', function(event) {
            event.preventDefault();
-           // generate a five digit number for the contact_number variable
-           // these IDs from the previous steps
+           emailjs.sendForm('service_6qe8cbt', 'template_8ygr2ca', this)
+               .then(function() {
+                   console.log('SUCCESS!');
+                   alert("Email successfully sent")
+               }, function(error) {
+                   console.log('FAILED...', error);
+               });
+       });
+       document.getElementById('contact-dialog-form').addEventListener('submit', function(event) {
+           event.preventDefault();        
            emailjs.sendForm('service_i1fsptw', 'template_jjkclsr', this)
                .then(function() {
                    console.log('SUCCESS!');
@@ -49,6 +57,7 @@
        });
    }
 </script>
+
 </head>
 
 <body>
@@ -394,44 +403,62 @@
                            </li>
                         </ul>
                      </div>
-                     <!-- <dialog id="dialog" style="display: flex; flex-direction: column; gap: 40px;">
-                        <h1 style="background: transparent; position: fixed; left: 70px; top: 30px; z-index: 9999; color: blue;">Apply Now</h1>
-                        <button class="close" style="background: transparent; position: fixed; right: 30px; top: 30px; z-index: 9999;"><i class="fal fa-times"></i></button>
-                        <div class="dialog-container">
-                           <div class="first-dialog">
-                              <div>
-                                  <label for="">Full Name</label>
-                                 <input type="text" placeholder="Candidate Full Name">
-                              </div>
-                              <div>
-                                 <label for="">Phone Number</label>
-                                <input type="text" placeholder="Phone Number">
-                             </div>
-                             <div>
-                              <label for="">Graduation Year</label>
-                             <input type="text" placeholder="Graduation Year">
-                          </div>
-                           </div>
-                           <div class="second-dialog">
-                              <div>
-                                 <label for="">Email</label>
-                                <input type="text" placeholder="Email id">
-                             </div>
-                             <div>
-                              <label for="">College Name</label>
-                             <input type="text" placeholder="College Name">
-                          </div>
-                          <div>
-                           <label for="">Dream Company</label>
-                          <input type="text" placeholder="Dream Company">
-                       </div>
+                     
+                      <a  class="e-btn e-btn-border" onclick="showApplyDialog(true)" style="cursor: pointer;">apply now</a>
+                      <dialog id="apply-dialog">
+                        <div class="wrapper">
+                        <div class="dialog-content">
+
+                           <h3 style="color: #2b4eff;">Apply Now</h3>
+                           
+                              <form id="contact-dialog-form">
+                                 <div class="row">
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Your Name" name="name" id="name">
+                                       </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="email" placeholder="Your Email" name="email" id="email" >
+                                       </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Phone Number" name="phone" id="phone">
+                                       </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Company Name" name="company" id="company">
+                                       </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Experience(In Years)" name="experience" id="experience">
+                                       </div>
+                                    </div>
+                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Dream Company" name="dream" id="dream">
+                                       </div>
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="col-xxl-12">
+                                       <div class="contact__btn">
+                                          <button type="submit" class="e-btn" value="Send">Submit</button>
+                                          <button type="button" class="e-btn" onclick="showApplyDialog(false)">cancel</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </form>
                            </div>
                         </div>
-                        <button style="width: 70%; padding: 8px; background-color: #2b4eff; color: aliceblue; border-radius: 10px;">submit</button>
-                      </dialog>  
-                      
-                      <button class="show e-btn e-btn-border">apply now</button> -->
-                      <a href="contact.html" class="e-btn e-btn-border">apply now</a>
+                       
+                     </dialog>
                      
                   </div>
                </div>
