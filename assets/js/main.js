@@ -339,15 +339,7 @@
 })(jQuery);
 
 //////////////////////////////////////////////////////////
-// 24.dialog
 
-  const dialog = document.getElementById('apply-dialog')
-  const wrapper = document.querySelector(".wrapper")
- 
-
-  const showApplyDialog = (show)=> show ?  dialog.showModal() : dialog.close()
-
-  dialog.addEventListener('click', (e)=> !wrapper.contains(e.target) && dialog.close())
 // accordian
 const accordian = document.getElementsByClassName('contentbox')
 for(i=0; i<accordian.length; i++){
@@ -380,3 +372,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		faq.classList.toggle("active")
 	})
   })
+
+  // 24.dialog
+
+  const dialog = document.getElementById('apply-dialog')
+  const wrapper = document.querySelector(".wrapper")
+ 
+
+  const showApplyDialog = (show)=> show ?  dialog.showModal() : dialog.close()
+
+  // Add an event listener to the dialog element
+dialog.addEventListener('click', (e) => {
+	// Check if the click is outside the wrapper element
+	if (!wrapper.contains(e.target)) {
+	  dialog.close();
+	}
+  });
