@@ -57,6 +57,7 @@
        });
    }
 </script>
+<link rel="stylesheet" href="build/css/intlTelInput.css">
 
 </head>
 
@@ -410,39 +411,119 @@
                         <div class="dialog-content">
 
                            <h3 style="color: #2b4eff;">Apply Now</h3>
+                           <div class="apply-page-count-section" >
+                              <div class="countone" id="count_-one">1</div>
+                              <div class="between-count" id="between_-count"></div>
+                              <div class="count-two" id="count_-two">2</div>
+                           </div>
                            
                               <form id="contact-dialog-form">
-                                 <div class="row">
+                                 <div class="dialog-one">
+                                    
+                                      <h5>1.your interested program?</h5>
+                                      <div class="qstn-one">
+                                      
+                                          <label class="qstn">
+                                             <input type="checkbox" class="checkbox-input" name="front-end-engineering-program" id="front-end-engineering-program" value="front-end-engineering-program" onchange="handleCheckboxChange(this)">
+                                             <span class="custom-checkbox"></span>
+                                             <span>Frontend Engineering</span>
+                                         </label>
+                                      
+                                         <label class="qstn">
+                                          <input type="checkbox" class="checkbox-input" name="backend-engineering-program" id="backend-engineering-program" value="backend-engineering-program" onchange="handleCheckboxChange(this)">
+                                          <span class="custom-checkbox"></span>
+                                          <span>Backend Engineering</span>
+                                      </label>
+
+                                      <label class="qstn">
+                                       <input type="checkbox" class="checkbox-input" name="fullstack-engineering-program" id="fullstack-engineering-program" value="fullstack-engineering-program" onchange="handleCheckboxChange(this)">
+                                       <span class="custom-checkbox"></span>
+                                       <span>Fullstack Engineering</span>
+                                   </label>
+
+                                   <label class="qstn">
+                                    <input type="checkbox" class="checkbox-input" name="AR-VR-engineering-program" id="AR-VR-engineering-program" value="AR-VR-engineering-program" onchange="handleCheckboxChange(this)">
+                                    <span class="custom-checkbox"></span>
+                                    <span>AR/VR Engineering</span>
+                                </label>
+
+                                <label class="qstn">
+                                 <input type="checkbox" class="checkbox-input" name="Data-Analysis-program" id="Data-Analysis-program" value="Data-Analysis-program" onchange="handleCheckboxChange(this)">
+                                 <span class="custom-checkbox"></span>
+                                 <span>Data Analysis</span>
+                             </label>
+
+                             <label class="qstn">
+                              <input type="checkbox" class="checkbox-input" name="3D-for-game-development" id="3D-for-game-development" value="3D-for-game-development" onchange="handleCheckboxChange(this)">
+                              <span class="custom-checkbox"></span>
+                              <span>3D Modelling</span>
+                          </label>                                                
+                                      </div>
+                                    <div>
+                                    </div>
+                                 </div>
+                
+                                 <div class="dialog-one">
+                                    <h5>2.Are you a College Student or Working Professional or Graduated but not working?</h5>
+                                    <div class="qstn-two">
+                                      
+                                       <label class="qstn">
+                                          <input type="checkbox" class="checkbox-input" name="collegestudent" id="collegestudent" value="college student" onchange="handleCheckboxChange(this)">
+                                          <span class="custom-checkbox"></span>
+                                          <span>College Student</span>
+                                      </label>
+                                   
+                                      <label class="qstn">
+                                       <input type="checkbox" class="checkbox-input" name="workingproffessional" value="working proffessional" id="workingproffessional" onchange="handleCheckboxChange(this)">
+                                       <span class="custom-checkbox"></span>
+                                       <span>Working Proffesional</span>
+                                   </label>
+
+                                   <label class="qstn">
+                                    <input type="checkbox" class="checkbox-input" name="Graduatedbutnotworking" value="Graduated but not working" id="graduatedbutnotworking" onchange="handleCheckboxChange(this)">
+                                    <span class="custom-checkbox"></span>
+                                    <span>Graduated but not working</span>
+                                </label>                     
+                                   </div>
+                                 
+                                 </div>
+
+                                 <div style="display: none;" class="dialog-two">
+                                      <div class="row">
                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
-                                          <input type="text" placeholder="Your Name" name="name" id="name">
+                                          <input type="text" placeholder="Your Name" name="name" id="name" required>
                                        </div>
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
-                                          <input type="email" placeholder="Your Email" name="email" id="email" >
+                                          <input type="email" placeholder="Your Email" name="email" id="email" required>
                                        </div>
                                     </div>
                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
-                                          <input type="text" placeholder="Phone Number" name="phone" id="phone">
+                                          <input type="tel" placeholder="Phone Number" name="phone" id="phone" required>
                                        </div>
                                     </div>
-                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                    <!-- <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
                                           <input type="text" placeholder="Company Name" name="company" id="company">
                                        </div>
-                                    </div>
+                                    </div> -->
                                     <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
                                           <input type="text" placeholder="Experience(In Years)" name="experience" id="experience">
                                        </div>
+                                       <div class="contact__form-input">
+                                          <input type="text" placeholder="Graduation Year" name="graduation" id="graduation">
+                                       </div>
                                     </div>
-                                    <div class="col-xxl-6 col-xl-6 col-md-6">
+                                    
+                                    <!-- <div class="col-xxl-6 col-xl-6 col-md-6">
                                        <div class="contact__form-input">
                                           <input type="text" placeholder="Dream Company" name="dream" id="dream">
                                        </div>
-                                    </div>
+                                    </div> -->
                                     
                                     
                                     
@@ -453,6 +534,7 @@
                                           <button type="button" class="e-btn" onclick="showApplyDialog(false)">cancel</button>
                                        </div>
                                     </div>
+                                   </div>
                                  </div>
                               </form>
                            </div>
@@ -558,7 +640,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="front-end-engineering-program.html">
-                                          <img style="height: 200px;"  src="assets/img/frontend1.jpeg" alt="">
+                                          <img style="height: 2zz00px;"  src="assets/img/1.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#">Frontend Development</a>
@@ -589,7 +671,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="backend-engineering-program.html">
-                                          <img style="height: 200px;"  src="assets/img/backend1.jpeg" alt="">
+                                          <img style="height: 200px;"  src="assets/img/2.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#" class="sky-blue">Backend Development</a>
@@ -620,7 +702,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="fullstack-engineering-program.html">
-                                          <img style="height: 200px;" src="assets/img/fullstack1.jpeg" alt="">
+                                          <img style="height: 200px;" src="assets/img/3.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#" class="blue-2">Fullstack Development</a>
@@ -651,7 +733,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="AR-VR-engineering-program.html">
-                                          <img style="height: 200px;" src="assets/img/arvr1.jpeg" alt="">
+                                          <img style="height: 200px;" src="assets/img/5.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#" class="green">AR/VR</a>
@@ -683,7 +765,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="Data-Analysis-program.html">
-                                          <img style="height: 200px;" src="assets/img/dataanalysis1.jpeg" alt="">
+                                          <img style="height: 200px;" src="assets/img/4.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#" class="blue">Data Analysis</a>
@@ -715,7 +797,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="3D-for-game-development.html">
-                                          <img style="height: 200px;" src="assets/img/3dgame1.jpeg" alt="">
+                                          <img style="height: 200px;" src="assets/img/6.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#" style="background-color: #b56574;">3D Modelling</a>
@@ -1002,6 +1084,31 @@
    </footer>
    <!-- footer area end -->
    <!-- JS here -->
+   <script src="build/js/intlTelInput.js"></script>
+   <script>
+ document.addEventListener("DOMContentLoaded", function() {
+            var input = document.querySelector("#phone");
+            var iti = window.intlTelInput(input, {
+                initialCountry: "in", // Set default country as India
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+            });
+
+            // Function to update the input value with the selected country's dial code
+            function updateDialCode() {
+                var countryData = iti.getSelectedCountryData();
+                input.value = "+" + countryData.dialCode;
+            }
+
+            // Update input with the default country's dial code on initialization
+            updateDialCode();
+
+            // Update input value with country code when a country is selected
+            input.addEventListener("countrychange", function() {
+                updateDialCode();
+            });
+        });
+   </script>
+   
    <script src="assets/js/vendor/jquery-3.5.1.min.js"></script>
    <script src="assets/js/vendor/waypoints.min.js"></script>
    <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -8923,12 +8923,136 @@ svg{
 dialog{
   width: 70%;
   border-radius: 7px;
+  border: 0px solid white;
+
+}
+.apply-page-count-section{
+  display: flex; 
+  align-items: center; 
+  gap:5px;
+}
+.countone{
+  height: 30px;
+   width: 30px; 
+   border-radius: 50%; 
+   background-color: #d9d9d9; 
+   display: flex; 
+   justify-content: center; 
+   align-items: center;
+}
+.between-count{
+  width: 50px; 
+  height: 1px; 
+  background-color: #d9d9d9;
+}
+.count-two{
+  height: 30px; 
+  width: 30px; 
+  border-radius: 50%; 
+  background-color: #d9d9d9; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
 }
 
+.dialog-one{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.qstn-one{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: auto; /* Rows will adjust to content */
+  row-gap: 20px;
+  column-gap: 40px;
+}
+.qstn-two{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: auto; /* Rows will adjust to content */
+  row-gap: 20px;
+  column-gap: 40px;
+}
+.qstn{
+  width: 80%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.qstn > input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.dialog-content{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px;
+}
+#contact-dialog-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.qstn > input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
+}
+
+.qstn {
+  display: flex;
+  align-items: center;
+}
+
+.qstn > span {
+  margin-left: 8px;
+}
     @media screen and (max-width: 575px) {
       dialog{
         width: 100%;
         border-radius: 7px;
+      }
+      .qstn-two{
+       display: flex;
+       flex-direction: column;
+       gap: 10px;
+      }
+      .qstn-one{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+       }
+       .qstn{
+        width: 100%;
       }
       .yellow-bg > img {
         display: none;

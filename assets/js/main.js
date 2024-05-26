@@ -25,7 +25,9 @@
 22. Parallax Js
 23. InHover Active Js
 24.dialog
-25.accordian
+25.checkbox
+26.accordian
+
 ****************************************************/
 
 (function ($) {
@@ -372,19 +374,81 @@ document.addEventListener("DOMContentLoaded", function() {
 		faq.classList.toggle("active")
 	})
   })
+//24.checkbox
+function handleCheckboxChange(checkbox) {
+	const dialogOne = document.querySelectorAll('.dialog-one');
+	const dialogTwo = document.querySelector('.dialog-two');
+	const graduationYear = document.getElementById('graduation');
+	const experience = document.getElementById('experience');
 
-  // 24.dialog
+	let qstnOneChecked = false;
+	let qstnTwoChecked = false;
+	let workingProfessionalChecked = false;
+	let collegeStudentChecked = false;
+
+	document.querySelectorAll('.qstn-one .checkbox-input').forEach(cb => {
+	  if (cb.checked) qstnOneChecked = true;
+	});
+
+	document.querySelectorAll('.qstn-two .checkbox-input').forEach(cb => {
+	  if (cb.checked) {
+		qstnTwoChecked = true;
+		if (cb.name === 'workingproffessional') workingProfessionalChecked = true;
+		if (cb.name === 'collegestudent') collegeStudentChecked = true;
+	  }
+	});
+
+	if (qstnOneChecked && qstnTwoChecked) {
+	  dialogOne.forEach(dialog => dialog.style.display = 'none');
+	  dialogTwo.style.display = 'block';
+	  document.getElementById('count_-one').style.backgroundColor = "#2b70ff"
+	  document.getElementById('count_-one').style.color = "#fff"
+	  document.getElementById('between_-count').style.backgroundColor = "#2b70ff"
+	} else {
+	  dialogOne.forEach(dialog => dialog.style.display = 'block');
+	  dialogTwo.style.display = 'none';
+	}
+	if (workingProfessionalChecked) {
+	  document.getElementById("graduation").style.display='none';
+      document.getElementById("experience").style.display='block';
+	} else if (collegeStudentChecked) {
+	   document.getElementById("experience").style.display='none';
+	   document.getElementById("graduation").style.display='block';
+	} 
+  }
+
+
+  // 25.dialog
 
   const dialog = document.getElementById('apply-dialog')
   const wrapper = document.querySelector(".wrapper")
  
 
-  const showApplyDialog = (show)=> show ?  dialog.showModal() : dialog.close()
+  const showApplyDialog = (show)=>{
+	if (show) {
+		dialog.showModal()
+	} else {
+		dialog.close()
+		resetForm()
+	}
+  }
 
+  const resetForm = () => {
+    const form = document.getElementById('contact-dialog-form');
+    form.reset();
+    document.querySelectorAll('.checkbox-input').forEach(checkbox => {
+      checkbox.checked = false;
+    });
+    document.querySelectorAll('.dialog-one').forEach(dialog => dialog.style.display = 'block');
+    document.querySelector('.dialog-two').style.display = 'none';
+    document.getElementById('graduation').parentElement.classList.remove('hidden');
+    document.getElementById('experience').parentElement.classList.remove('hidden');
+  };
   // Add an event listener to the dialog element
 dialog.addEventListener('click', (e) => {
 	// Check if the click is outside the wrapper element
 	if (!wrapper.contains(e.target)) {
 	  dialog.close();
+	  resetForm()
 	}
   });
