@@ -385,6 +385,7 @@ function handleCheckboxChange(checkbox) {
 	let qstnTwoChecked = false;
 	let workingProfessionalChecked = false;
 	let collegeStudentChecked = false;
+	let graduatedbutnotworkingChecked = false;
 
 	document.querySelectorAll('.qstn-one .checkbox-input').forEach(cb => {
 	  if (cb.checked) qstnOneChecked = true;
@@ -395,6 +396,7 @@ function handleCheckboxChange(checkbox) {
 		qstnTwoChecked = true;
 		if (cb.name === 'workingproffessional') workingProfessionalChecked = true;
 		if (cb.name === 'collegestudent') collegeStudentChecked = true;
+		if (cb.name === 'Graduatedbutnotworking') graduatedbutnotworkingChecked = true;
 	  }
 	});
 
@@ -411,10 +413,13 @@ function handleCheckboxChange(checkbox) {
 	if (workingProfessionalChecked) {
 	  document.getElementById("graduation").style.display='none';
       document.getElementById("experience").style.display='block';
-	} else if (collegeStudentChecked) {
+	} else if (collegeStudentChecked && graduatedbutnotworkingChecked) {
 	   document.getElementById("experience").style.display='none';
 	   document.getElementById("graduation").style.display='block';
-	} 
+	}else{
+		document.getElementById("experience").style.display='none';
+	   document.getElementById("graduation").style.display='block';
+	}
   }
 
 
@@ -443,6 +448,9 @@ function handleCheckboxChange(checkbox) {
     document.querySelector('.dialog-two').style.display = 'none';
     document.getElementById('graduation').parentElement.classList.remove('hidden');
     document.getElementById('experience').parentElement.classList.remove('hidden');
+	document.getElementById('count_-one').style.backgroundColor = " #d9d9d9"
+	document.getElementById('count_-one').style.color = "black"
+	document.getElementById('between_-count').style.backgroundColor = " #d9d9d9"
   };
   // Add an event listener to the dialog element
 dialog.addEventListener('click', (e) => {

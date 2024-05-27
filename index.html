@@ -46,14 +46,18 @@
                });
        });
        document.getElementById('contact-dialog-form').addEventListener('submit', function(event) {
-           event.preventDefault();        
-           emailjs.sendForm('service_i1fsptw', 'template_jjkclsr', this)
-               .then(function() {
-                   console.log('SUCCESS!');
-                   alert("Email successfully sent")
-               }, function(error) {
-                   console.log('FAILED...', error);
-               });
+           event.preventDefault();  
+           if (this && event) {
+              emailjs.sendForm('service_i1fsptw', 'template_jjkclsr', this)
+                  .then(function() {
+                      console.log('SUCCESS!');
+                      alert("Email successfully sent")
+                  }, function(error) {
+                      console.log('FAILED...', error);
+                  });
+                  dialog.close()
+		            resetForm()
+           }      
        });
    }
 </script>
@@ -312,7 +316,7 @@
                               <h3 class="slider__title"><span class="yellow-bg" style="font-size: 40px;">Jumpstart Your <img
                                        src="assets/img/Under.png" alt="" style="margin-bottom: -40px;"> </span> Tech Career in Just 100 days with our Bootcamp!</h3>
                               <p>Learn with a highly structured, personalised & guided world-class program. To become the best tech engineer and work at top tech companies.</p>
-                              <a href="contact.html" class="e-btn slider__btn">Enroll Now</a>
+                              <a onclick="showApplyDialog(true)" style="cursor: pointer;" class="e-btn slider__btn">Enroll Now</a>
                            </div>
                         </div>
                      </div>
@@ -640,7 +644,7 @@
                                  <div class="course__item white-bg mb-30 fix">
                                     <div class="course__thumb w-img p-relative fix">
                                        <a href="front-end-engineering-program.html">
-                                          <img style="height: 2zz00px;"  src="assets/img/1.png" alt="">
+                                          <img style="height: 200px;"  src="assets/img/1.png" alt="">
                                        </a>
                                        <div class="course__tag">
                                           <a href="#">Frontend Development</a>
@@ -825,33 +829,8 @@
                                     </div>
                                  </div>
                               </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                            </div>
                         </div>
-
-
-
-
-
-
-
-
                      </div>
                   </div>
                </div>
